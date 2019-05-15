@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/people")]
     [Produces("application/json")]
     [ApiController]
     public class PeopleController : ControllerBase
@@ -24,14 +24,12 @@ namespace Api.Controllers
             new Person() { Id = 8, Name = "River Tam", Active = true, Position = "Witch" }
         };
 
-        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Person>> Get()
         {
             return Ok(People);
         }
 
-        // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<Person> GetById(int id)
         {
