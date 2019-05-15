@@ -23,6 +23,8 @@ namespace Client.Config
 
         public string Api { get; set; }
 
+        public string Gateway { get; set; }
+
         public string Scopes { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace Client
 {
@@ -38,7 +39,15 @@ namespace Client
                     var config = context.RequestServices.GetService<IOptions<ClientOptions>>();
                     context.Response.StatusCode = 200;
                     context.Response.ContentType = "application/json";
-                    await context.Response.WriteAsync($"{{ \"authority\": \"{config?.Value?.Authority}\", \"api\": \"{config?.Value?.Api}\", \"scopes\":\"{config?.Value?.Scopes}\" }}");
+                    var json = JsonConvert.SerializeObject(new
+                    {
+                        Authority = config?.Value?.Authority,
+                        Api = config?.Value?.Api,
+                        Gateway = config?.Value?.Gateway,
+                        Scopes = config?.Value?.Scopes,
+                    });
+
+                    await context.Response.WriteAsync(json);
                 }
                 else
                 {

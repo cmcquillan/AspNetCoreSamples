@@ -29,7 +29,10 @@
                         <button type="button" class="btn btn-primary" onclick="acquireUser();">Acquire User</button>
                     </li>
                     <li class="list-group-item">
-                        <button type="button" class="btn btn-info" onclick="callAPI();">Call API</button>
+                        <button type="button" class="btn btn-info" onclick="callAPI();">Call API (Direct)</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-info" onclick="callAPIGateway();">Call API (API Management)</button>
                     </li>
                     <li class="list-group-item">
                         <button type="button" class="btn btn-danger" onclick="startLogout();">Logout</button>
@@ -40,7 +43,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <textarea class="form-control" id="outputArea"></textarea>
+                    <textarea class="form-control" id="outputArea" rows="30"></textarea>
                 </div>
             </div>
         </div>
