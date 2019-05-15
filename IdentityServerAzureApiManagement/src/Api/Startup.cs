@@ -48,12 +48,17 @@ namespace Api
 
             services.AddMvc(options =>
             {
-                var policy = new AuthorizationPolicyBuilder()
-                        .RequireAuthenticatedUser()
-                        .RequireClaim("scope", "people-api")
-                        .Build();
+                Boolean.TryParse(Configuration["AuthenticateApi"], out bool authenticateApi);
 
-                options.Filters.Add(new AuthorizeFilter(policy));
+                if (authenticateApi)
+                {
+                    var policy = new AuthorizationPolicyBuilder()
+                            .RequireAuthenticatedUser()
+                            .RequireClaim("scope", "people-api")
+                            .Build();
+
+                    options.Filters.Add(new AuthorizeFilter(policy));
+                }
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSwaggerGen(c =>
