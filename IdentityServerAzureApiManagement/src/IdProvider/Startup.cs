@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using IdProvider.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityServer4.Models;
 
 namespace IdProvider
 {
@@ -44,8 +45,8 @@ namespace IdProvider
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.Configure<IISOptions>(options =>
             {
                 options.AutomaticAuthentication = false;
@@ -97,7 +98,7 @@ namespace IdProvider
             app.UseIdentityServer();
             app.UseAuthentication();
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

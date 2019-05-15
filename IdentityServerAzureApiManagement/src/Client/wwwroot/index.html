@@ -16,7 +16,32 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <button type="button" class="btn btn-success" onclick="startLogin();">Login</button>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-success" onclick="startLogin();">Login</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-primary" onclick="acquireUser();">Acquire User</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-info" onclick="callAPI();">Call API</button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-danger" onclick="startLogout();">Logout</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <textarea class="form-control" id="outputArea"></textarea>
+                </div>
             </div>
         </div>
     </div>

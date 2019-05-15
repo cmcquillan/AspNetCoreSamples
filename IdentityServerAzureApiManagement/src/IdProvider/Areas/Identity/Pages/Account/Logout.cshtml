@@ -1,0 +1,31 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<header>
+    <h1>@ViewData["Title"]</h1>
+    @if (String.IsNullOrEmpty(Model.SignOutIFrameUrl))
+    {
+        <p>You have successfully logged out of the application.</p>
+    }
+    else
+    {
+        <p>
+            We are currently signing you out of the application.
+            Please stand by.
+            If you are not redirected within 10 seconds, please <a class="PostLogoutRedirectUri" href="@Model.PostLogoutRedirectUri">click here</a>.
+        </p>
+        <iframe src="@Model.SignOutIFrameUrl"></iframe>
+    }
+</header>
+
+@section scripts {
+
+    @if (!String.IsNullOrEmpty(Model.SignOutIFrameUrl))
+    {
+        <script src="~/js/signout-redirect.js">
+        </script>
+    }
+}
