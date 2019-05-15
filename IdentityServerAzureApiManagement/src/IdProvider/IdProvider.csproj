@@ -1,10 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-IdProvider-CCC0CF4C-C8E2-49D9-A8B0-39909B05D89E</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="tempkey.rsa" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="tempkey.rsa" />
+  </ItemGroup>
 
 
   <ItemGroup>
