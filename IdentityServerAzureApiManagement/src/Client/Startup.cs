@@ -41,10 +41,10 @@ namespace Client
                     context.Response.ContentType = "application/json";
                     var json = JsonConvert.SerializeObject(new
                     {
-                        Authority = config?.Value?.Authority,
-                        Api = config?.Value?.Api,
-                        Gateway = config?.Value?.Gateway,
-                        Scopes = config?.Value?.Scopes,
+                        authority = config?.Value?.Authority,
+                        api = config?.Value?.Api,
+                        gateway = config?.Value?.Gateway,
+                        scopes = config?.Value?.Scopes,
                     });
 
                     await context.Response.WriteAsync(json);
