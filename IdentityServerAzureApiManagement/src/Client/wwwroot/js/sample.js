@@ -18,6 +18,7 @@ function logError(...items) {
 $(function () {
     $.get('/config.json', function (data) {
         window.apiUrl = data.api;
+        window.gatewayUrl = data.gateway;
 
         var config = {
             authority: data.authority,
