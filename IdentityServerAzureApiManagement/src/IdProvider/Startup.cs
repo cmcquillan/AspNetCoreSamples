@@ -66,14 +66,8 @@ namespace IdProvider
             builder.AddInMemoryApiResources(Configuration.GetSection("ApiResources"));
             builder.AddInMemoryClients(Configuration.GetSection("clients"));
 
-            if (Environment.IsDevelopment())
-            {
-                builder.AddDeveloperSigningCredential();
-            }
-            else
-            {
-                throw new Exception("need to configure key material");
-            }
+            // Not a production system, never deploy a real system like this
+            builder.AddDeveloperSigningCredential();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
