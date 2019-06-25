@@ -1,1 +1,2 @@
-# This repository is for public samples related to my work
+# Samples for ASP.NET Core Concepts
+When I feel the need to brush up on a subject I add a quick ASP.NET Core project here. If you like people practicing their skillset then feel free to take a look. Otherwise, nothing to see here!
